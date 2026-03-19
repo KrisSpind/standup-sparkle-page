@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-coaching.jpg";
+import reginaPortrait from "@/assets/regina-portrait.jpg";
 
 const HeroSection = () => {
   return (
@@ -12,7 +12,7 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <p className="text-primary font-body font-semibold text-sm tracking-widest uppercase mb-6">
-              Coaching · Persönlichkeitsentwicklung · Präsenz
+              StandUp Coaching
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display font-medium leading-[1.15] mb-6">
               Sich selbst klarer sehen.{" "}
@@ -41,13 +41,18 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="flex justify-center"
           >
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src={heroImage}
-                alt="Einladender Raum mit warmem Licht – ein Ort für innere Begegnung"
-                className="w-full h-auto object-cover"
-              />
+            <div className="relative">
+              <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+                <img
+                  src={reginaPortrait}
+                  alt="Regina Huber – Coach für Persönlichkeitsentwicklung"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full bg-terracotta-soft opacity-60" />
+              <div className="absolute -top-6 -left-6 w-12 h-12 rounded-full bg-primary/10" />
             </div>
           </motion.div>
         </div>
