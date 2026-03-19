@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Jamie R.",
-    quote: "I went from freezing up at open mics to headlining a 200-seat club in six months. This coaching changed my life.",
-    role: "Now performing weekly",
+    name: "Maria Chen",
+    role: "Engineering Manager, Fintech Startup",
+    quote: "Our standups went from 35 minutes of rambling to 12 minutes of clarity. The team actually looks forward to them now.",
   },
   {
-    name: "Alex T.",
-    quote: "The material workshops alone are worth it. My jokes went from getting polite chuckles to genuine belly laughs.",
-    role: "Won local comedy competition",
+    name: "David Park",
+    role: "VP of Product, SaaS Company",
+    quote: "The coaching paid for itself in the first week. Blockers surface faster and cross-team alignment improved overnight.",
   },
   {
-    name: "Sam K.",
-    quote: "I thought I wasn't funny enough. Turns out I just needed someone to help me find my angle. Absolutely transformative.",
-    role: "First Netflix set in progress",
+    name: "Rachel Foster",
+    role: "Scrum Master, Enterprise",
+    quote: "I thought I knew how to run standups. This coaching showed me how much I was leaving on the table. Genuinely transformative.",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 md:py-32 bg-card/50">
+    <section className="py-24 md:py-32">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,8 +29,8 @@ const TestimonialsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-800 mb-4">
-            What Comics <span className="text-primary">Say</span>
+          <h2 className="text-3xl md:text-5xl font-display mb-4">
+            Teams that <span className="text-primary">transformed</span>
           </h2>
         </motion.div>
 
@@ -42,16 +42,12 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="bg-background border border-border rounded-xl p-8"
+              className="bg-card border border-border rounded-xl p-8"
             >
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-foreground font-body leading-relaxed mb-6 italic">"{t.quote}"</p>
+              <Quote className="w-8 h-8 text-primary/30 mb-4" />
+              <p className="text-foreground font-body leading-relaxed mb-6">"{t.quote}"</p>
               <div>
-                <p className="font-display font-bold">{t.name}</p>
+                <p className="font-body font-semibold">{t.name}</p>
                 <p className="text-muted-foreground text-sm">{t.role}</p>
               </div>
             </motion.div>

@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
-import { Lightbulb, Target, Flame } from "lucide-react";
+import { Clock, Users, TrendingUp } from "lucide-react";
 
 const steps = [
   {
-    icon: Lightbulb,
-    title: "Discover Your Comedy DNA",
-    description: "We dig into what makes you genuinely funny — your perspective, timing, and natural voice. No cookie-cutter formulas.",
+    icon: Clock,
+    title: "Audit Your Current Standups",
+    description: "I observe your team's standups and identify what's working, what's wasting time, and where alignment breaks down.",
   },
   {
-    icon: Target,
-    title: "Craft & Sharpen Material",
-    description: "Turn raw ideas into tight, punchline-driven sets. We workshop every bit until it lands consistently.",
+    icon: Users,
+    title: "Custom Framework Design",
+    description: "Together we build a standup format tailored to your team's size, cadence, and goals — not a one-size-fits-all template.",
   },
   {
-    icon: Flame,
-    title: "Stage-Ready Performance",
-    description: "Master delivery, crowd work, and stage presence through simulated sets and real open-mic prep.",
+    icon: TrendingUp,
+    title: "Coach & Iterate",
+    description: "I facilitate sessions, coach facilitators, and refine the process until your team runs standups that stick — without me.",
   },
 ];
 
 const MethodSection = () => {
   return (
-    <section id="method" className="py-24 md:py-32">
+    <section id="method" className="py-24 md:py-32 bg-card">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,11 +29,12 @@ const MethodSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-800 mb-4">
-            The <span className="text-primary">Method</span>
+          <h2 className="text-3xl md:text-5xl font-display mb-4">
+            A proven approach to{" "}
+            <span className="text-primary">better standups</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
-            A proven three-phase approach to getting you from blank page to standing ovation.
+          <p className="text-muted-foreground text-lg max-w-lg mx-auto font-body">
+            Three phases to go from dreaded daily meetings to your team's favorite 15 minutes.
           </p>
         </motion.div>
 
@@ -45,12 +46,13 @@ const MethodSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="bg-card border border-border rounded-xl p-8 hover:border-primary/40 transition-colors group"
+              className="bg-background border border-border rounded-xl p-8 hover:shadow-lg hover:shadow-primary/5 transition-shadow"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary-soft flex items-center justify-center mb-5">
                 <step.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-display font-bold mb-3">{step.title}</h3>
+              <span className="text-muted-foreground text-sm font-body font-semibold mb-2 block">Phase {i + 1}</span>
+              <h3 className="text-xl font-display mb-3">{step.title}</h3>
               <p className="text-muted-foreground font-body leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
