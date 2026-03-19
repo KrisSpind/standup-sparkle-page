@@ -1,51 +1,53 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-standup.jpg";
+import heroImage from "@/assets/hero-coaching.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden">
-      <div className="container mx-auto px-6 py-20 md:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen flex items-center">
+      <div className="container mx-auto px-6 py-16 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <span className="inline-block bg-primary-soft text-primary font-body font-semibold text-sm px-4 py-1.5 rounded-full mb-6">
-              Agile Coaching for Teams
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-[1.1] mb-6">
-              Run standups that actually{" "}
-              <span className="text-primary">move the needle.</span>
-            </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-lg mb-8 font-body leading-relaxed">
-              Expert coaching to transform your daily standups from status reports into focused, energizing alignment sessions.
+            <p className="text-primary font-body font-semibold text-sm tracking-widest uppercase mb-6">
+              Coaching · Persönlichkeitsentwicklung · Präsenz
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display font-medium leading-[1.15] mb-6">
+              Sich selbst klarer sehen.{" "}
+              <em className="text-primary">Innerlich frei werden.</em>
+            </h1>
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-10 font-body font-light">
+              Regina Huber begleitet Menschen dabei, innere Blockaden zu lösen und mit neuer Klarheit und Präsenz durchs Leben zu gehen.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#booking"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-body font-semibold px-7 py-3.5 rounded-lg text-base hover:opacity-90 transition-opacity"
+                href="#kontakt"
+                className="inline-flex items-center justify-center bg-primary text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
               >
-                Book a Free Call <ArrowRight className="w-4 h-4" />
+                Erstgespräch vereinbaren
               </a>
               <a
-                href="#method"
-                className="inline-flex items-center justify-center gap-2 border border-border text-foreground font-body font-medium px-7 py-3.5 rounded-lg text-base hover:bg-secondary transition-colors"
+                href="#ueber"
+                className="inline-flex items-center justify-center border border-border text-foreground font-body font-medium px-8 py-4 rounded-lg hover:bg-secondary transition-colors"
               >
-                See the Approach
+                Mehr erfahren
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-              <img src={heroImage} alt="Team during a standup meeting" className="w-full h-auto object-cover" />
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src={heroImage}
+                alt="Einladender Raum mit warmem Licht – ein Ort für innere Begegnung"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </motion.div>
         </div>
