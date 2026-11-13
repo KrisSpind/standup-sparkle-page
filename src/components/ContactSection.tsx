@@ -1,20 +1,33 @@
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { buildContactMailto } from "@/lib/contact";
+import { CONTACT_EMAIL, sendContactMessage } from "@/lib/contact";
+
+type Status = "idle" | "sending" | "sent" | "error";
 
 const ContactSection = () => {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const field = (key: string) => String(data.get(key) ?? "").trim();
 
-    window.location.href = buildContactMailto({
-      firstName: field("firstName"),
-      lastName: field("lastName"),
-      email: field("email"),
-      message: field("message"),
-    });
+    setStatus("sending");
+    try {
+      await sendContactMessage({
+        firstName: field("firstName"),
+        lastName: field("lastName"),
+        email: field("email"),
+        message: field("message"),
+        botcheck: data.has("botcheck"),
+      });
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -70,12 +83,29 @@ const ContactSection = () => {
               rows={4}
               className="w-full bg-background border border-border rounded-lg px-5 py-3.5 text-foreground placeholder:text-muted-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary resize-none"
             />
+            {/* Honeypot: hidden from humans, bots that tick it are rejected by the form service */}
+            <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
+              disabled={status === "sending"}
+              className="w-full bg-primary text-primary-foreground font-body font-semibold px-8 py-4 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-wait"
             >
-              Nachricht senden
+              {status === "sending" ? "Wird gesendet …" : "Nachricht senden"}
             </button>
+            <div aria-live="polite" className="text-center font-body">
+              {status === "sent" && (
+                <p className="text-primary">Danke für deine Nachricht! Ich melde mich so bald wie möglich bei dir.</p>
+              )}
+              {status === "error" && (
+                <p className="text-destructive">
+                  Das hat leider nicht geklappt. Schreib mir gern direkt an{" "}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                    {CONTACT_EMAIL}
+                  </a>
+                  .
+                </p>
+              )}
+            </div>
           </form>
         </motion.div>
       </div>
