@@ -30,6 +30,8 @@ const AboutSection = () => {
                 <img
                   src={reginaPortrait}
                   alt="Regina Huber"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
