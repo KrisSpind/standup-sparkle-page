@@ -29,5 +29,6 @@ class IntersectionObserverStub {
 
 Object.defineProperty(window, "IntersectionObserver", {
   writable: true,
+  configurable: true,
   value: IntersectionObserverStub,
 });
