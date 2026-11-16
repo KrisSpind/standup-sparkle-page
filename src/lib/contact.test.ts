@@ -21,15 +21,23 @@ describe("sendContactMessage", () => {
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toBe("https://api.web3forms.com/submit");
     expect(init.method).toBe("POST");
-    expect(JSON.parse(init.body)).toEqual({
+    expect(init.headers).not.toHaveProperty("Content-Type");
+    expect(Object.fromEntries(init.body as FormData)).toEqual({
       access_key: WEB3FORMS_ACCESS_KEY,
       subject: "Kontaktanfrage von Max Muster",
       from_name: "huberundso.de",
       name: "Max Muster",
       email: "max@example.com",
       message: "Hallo",
-      botcheck: false,
     });
+  });
+
+  it("flags the submission as spam when the honeypot was ticked", async () => {
+    const fetchMock = vi.fn().mockResolvedValue(jsonResponse(200, { success: true }));
+
+    await sendContactMessage({ ...input, botcheck: true }, fetchMock);
+
+    expect((fetchMock.mock.calls[0][1].body as FormData).get("botcheck")).toBe("on");
   });
 
   it("rejects on HTTP errors", async () => {

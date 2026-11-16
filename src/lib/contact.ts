@@ -19,18 +19,23 @@ export async function sendContactMessage(
 ): Promise<void> {
   const name = `${firstName} ${lastName}`.trim();
 
+  // Multipart body keeps this a CORS "simple request"; the service rejects preflight requests
+  const body = new FormData();
+  body.append("access_key", WEB3FORMS_ACCESS_KEY);
+  body.append("subject", `Kontaktanfrage von ${name}`);
+  body.append("from_name", "huberundso.de");
+  body.append("name", name);
+  body.append("email", email);
+  body.append("message", message);
+  // Any non-empty value marks the submission as spam, so only send it when the honeypot was ticked
+  if (botcheck) {
+    body.append("botcheck", "on");
+  }
+
   const response = await fetchImpl(WEB3FORMS_ENDPOINT, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      access_key: WEB3FORMS_ACCESS_KEY,
-      subject: `Kontaktanfrage von ${name}`,
-      from_name: "huberundso.de",
-      name,
-      email,
-      message,
-      botcheck,
-    }),
+    headers: { Accept: "application/json" },
+    body,
   });
 
   const result: { success?: boolean } | null = await response.json().catch(() => null);

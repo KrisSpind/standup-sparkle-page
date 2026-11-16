@@ -36,7 +36,9 @@ describe("ContactSection", () => {
 
     expect(await screen.findByText(/Danke für deine Nachricht/)).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Vorname")).toHaveValue("");
-    expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({ name: "Max Muster", botcheck: false });
+    const body = fetchMock.mock.calls[0][1].body as FormData;
+    expect(body.get("name")).toBe("Max Muster");
+    expect(body.has("botcheck")).toBe(false);
   });
 
   it("shows the email address as fallback when sending fails", async () => {
