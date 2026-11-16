@@ -45,13 +45,19 @@ const AboutSection = () => {
               className="space-y-6"
             >
               <p className="text-lg md:text-xl font-body font-light leading-relaxed text-muted-foreground">
-                Ich bin Regina – Lehrerin, Mutter von drei Kindern und Coach mit Leidenschaft. Nach vielen Jahren im Schulalltag suchte ich nach mehr Tiefe, echter Begegnung und innerer Bewegung — und fand meinen Weg im Coaching und in der Persönlichkeitsentwicklung.
+                Ich bin Regina – Ehefrau, Mama, Lehrerin und Coach aus Leidenschaft.
               </p>
               <p className="text-lg md:text-xl font-body font-light leading-relaxed text-muted-foreground">
-                Heute unterstütze ich Menschen dabei, sich selbst klarer zu sehen, innere Blockaden zu lösen und mit neuer Präsenz durchs Leben zu gehen.
+                Ich liebe echte Begegnungen, gute Gespräche und die Momente, in denen plötzlich etwas klarer wird. Mich selbst haben die Fragen des Lebens, persönliche Herausforderungen und der Wunsch, mich und andere besser zu verstehen, immer wieder auf neue Wege gebracht.
               </p>
               <p className="text-lg md:text-xl font-body font-light leading-relaxed text-muted-foreground">
-                In meiner Arbeit verbinde ich <strong className="font-semibold text-foreground">Erfahrung, Empathie und eine klare Haltung</strong>. Ob im Einzelcoaching oder auf der Bühne — ich öffne Räume für echte Aha-Momente, die nachhaltige Veränderung möglich machen.
+                Ich bin selbst nicht fertig mit meiner Entwicklung – und das möchte ich auch gar nicht sein. Aber ich habe auf meinem Weg schon einiges entdeckt, ausprobiert, hinterfragt und für mich verändert. Dabei durfte ich erfahren, wie viel sich bewegen kann, wenn wir beginnen, ehrlich hinzuschauen und uns selbst besser zu verstehen.
+              </p>
+              <p className="text-lg md:text-xl font-body font-light leading-relaxed text-muted-foreground">
+                Heute verbinde ich meine Erfahrungen aus dem Leben, dem Lehrerberuf und meiner eigenen Entwicklung mit meiner Arbeit als Coach. Ich begleite Menschen dabei, neue Perspektiven zu entdecken, sich selbst näherzukommen und ihren ganz eigenen Weg zu finden.
+              </p>
+              <p className="text-lg md:text-xl font-body font-light leading-relaxed text-muted-foreground">
+                <strong className="font-semibold text-foreground">Mal tiefgründig, mal mit Humor, immer auf Augenhöhe.</strong> Denn ich glaube, dass Veränderung nicht damit beginnt, dass wir jemand anderes werden müssen, sondern damit, dass wir mehr wir selbst sein dürfen.
               </p>
             </motion.div>
           </div>
