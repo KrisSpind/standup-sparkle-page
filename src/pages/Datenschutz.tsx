@@ -1,5 +1,5 @@
 import LegalLayout from "@/components/LegalLayout";
-import { legalEntity, OPEN_MARKER } from "@/lib/legal";
+import { legalEntity } from "@/lib/legal";
 
 const Datenschutz = () => (
   <LegalLayout title="Datenschutzerklärung">
@@ -47,22 +47,24 @@ const Datenschutz = () => (
 
     <h2>4. Kontaktformular</h2>
     <p>
-      Wenn du das Kontaktformular nutzt, werden Vorname, Nachname, E-Mail-Adresse und deine Nachricht an den Dienst
-      Web3Forms übermittelt und von dort per E-Mail an mich weitergeleitet. Web3Forms wird von Web3Creative, Kerala,
-      Indien, betrieben; die Server stehen in den USA. Nach Angaben des Anbieters werden Formularinhalte nicht
-      gespeichert, Server-Protokolle werden nach zwei Monaten gelöscht.
+      Das Kontaktformular überträgt keine Daten an mich oder an Dritte. Es öffnet lediglich dein E-Mail-Programm mit
+      einer vorbereiteten Nachricht. Erst wenn du diese Nachricht dort absendest, erhalte ich sie; es gilt dann
+      Abschnitt 5.
     </p>
-    <p>
-      Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit deine Anfrage auf ein Coaching abzielt, im Übrigen Art. 6
-      Abs. 1 lit. f DSGVO (Beantwortung von Anfragen).
-    </p>
-    <p>{OPEN_MARKER} Rechtsgrundlage der Übermittlung nach Indien/USA klären oder Formular-Dienst wechseln]]</p>
 
     <h2>5. Kontakt per E-Mail</h2>
     <p>
-      Wenn du mir schreibst, verarbeite ich deine Angaben, um deine Anfrage zu beantworten. E-Mails empfange und
-      speichere ich über Gmail; Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
-      Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO.
+      Wenn du mir schreibst, verarbeite ich deine Angaben, um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6
+      Abs. 1 lit. b DSGVO, soweit deine Anfrage auf ein Coaching abzielt, im Übrigen Art. 6 Abs. 1 lit. f DSGVO
+      (Beantwortung von Anfragen). E-Mails empfange und speichere ich über folgenden Anbieter, mit dem ein Vertrag
+      zur Auftragsverarbeitung besteht: {legalEntity.emailProvider}
+    </p>
+    <p>
+      Bitte schildere dein Anliegen in der ersten Nachricht nur kurz – Einzelheiten besprechen wir im Erstgespräch.
+      Teilst du mir von dir aus Angaben zu deiner Gesundheit mit, verarbeite ich sie ausschließlich zur Bearbeitung
+      deiner Anfrage; Rechtsgrundlage ist deine ausdrückliche Einwilligung (Art. 9 Abs. 2 lit. a DSGVO), die du
+      jederzeit widerrufen kannst. Bei Kindern und Jugendlichen unter 16 Jahren bitte ich darum, dass die Eltern den
+      ersten Kontakt aufnehmen.
     </p>
 
     <h2>6. Speicherdauer</h2>
