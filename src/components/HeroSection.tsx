@@ -11,15 +11,15 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <p className="text-primary font-body font-semibold text-sm tracking-widest uppercase mb-6">
-              StandUp Coaching
-            </p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-display font-medium leading-[1.15] mb-6">
+              <span className="block text-primary font-body font-semibold text-sm tracking-widest uppercase leading-relaxed mb-6">
+                StandUp Coaching · Persönlichkeitsentwicklung &amp; Lerncoaching in Rosenheim und im Chiemgau
+              </span>
               Sich selbst klarer sehen.{" "}
               <em className="text-primary">Innerlich frei werden.</em>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-lg mb-10 font-body font-light">
-              Regina Huber begleitet Menschen dabei, innere Blockaden zu lösen und mit neuer Klarheit und Präsenz durchs Leben zu gehen.
+              Regina Huber begleitet Erwachsene, Kinder, Jugendliche und Eltern dabei, innere Blockaden zu lösen, den Selbstwert zu stärken und mit neuer Klarheit durchs Leben und durch die Schulzeit zu gehen – vor Ort und online.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

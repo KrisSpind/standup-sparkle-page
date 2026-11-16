@@ -30,7 +30,17 @@ const faqs = [
   {
     question: "Findet das Coaching online oder vor Ort statt?",
     answer:
-      "Beides ist möglich. Viele Sitzungen finden online per Video statt, aber auch persönliche Treffen können vereinbart werden.",
+      "Beides ist möglich: online per Video oder persönlich im Raum Rosenheim und im Chiemgau.",
+  },
+  {
+    question: "Was ist der Unterschied zwischen Lerncoaching und Nachhilfe?",
+    answer:
+      "Nachhilfe übt Fachinhalte, etwa in Mathe oder Englisch. Lerncoaching setzt früher an: Wie lernt dein Kind am besten, was blockiert es, und wie wachsen Motivation und Selbstvertrauen? Oft lösen sich Lernprobleme dann auch in den Fächern.",
+  },
+  {
+    question: "Hilft Coaching auch bei Angst oder Sozialphobie?",
+    answer:
+      "Coaching kann helfen, mit Unsicherheit, Prüfungsangst oder Lampenfieber besser umzugehen. Eine Angststörung oder soziale Phobie gehört dagegen in ärztliche oder psychotherapeutische Behandlung – Coaching kann eine Therapie begleiten, aber nicht ersetzen.",
   },
 ];
 
