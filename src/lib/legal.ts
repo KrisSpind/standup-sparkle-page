@@ -11,5 +11,5 @@ export const legalEntity = {
   postalCodeAndCity: open("PLZ und Ort"),
   phone: open("Telefonnummer"),
   email: CONTACT_EMAIL,
-  emailProvider: open("Name und Anschrift des E-Mail-Anbieters des geschäftlichen Postfachs"),
+  emailProvider: "united-domains GmbH, Gautinger Straße 10, 82319 Starnberg, Deutschland",
 };
