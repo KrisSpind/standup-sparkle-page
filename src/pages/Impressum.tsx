@@ -20,8 +20,12 @@ const Impressum = () => (
 
     <h2>Kontakt</h2>
     <p>
-      Telefon: {legalEntity.phone}
-      <br />
+      {legalEntity.phone && (
+        <>
+          Telefon: {legalEntity.phone}
+          <br />
+        </>
+      )}
       E-Mail: <a href={`mailto:${legalEntity.email}`}>{legalEntity.email}</a>
     </p>
 

@@ -9,7 +9,8 @@ export const legalEntity = {
   business: "StandUp Coaching",
   street: open("Straße und Hausnummer"),
   postalCodeAndCity: open("PLZ und Ort"),
-  phone: open("Telefonnummer"),
+  // Optional; the line is omitted on the imprint while unset
+  phone: undefined as string | undefined,
   email: CONTACT_EMAIL,
   emailProvider: "united-domains GmbH, Gautinger Straße 10, 82319 Starnberg, Deutschland",
 };
