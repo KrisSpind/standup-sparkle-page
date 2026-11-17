@@ -1,4 +1,4 @@
-export const CONTACT_EMAIL = "regenbogen.rh@gmail.com";
+export const CONTACT_EMAIL = "regina@huberundso.de";
 
 export interface ContactMessage {
   firstName: string;

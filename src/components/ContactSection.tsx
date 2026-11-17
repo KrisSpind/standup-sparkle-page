@@ -76,6 +76,14 @@ const ContactSection = () => {
             >
               Nachricht senden
             </button>
+            <p className="text-muted-foreground text-sm font-body font-light text-center leading-relaxed">
+              Bitte schildere dein Anliegen zunächst nur kurz – Einzelheiten besprechen wir im Erstgespräch. Bei Kindern
+              und Jugendlichen unter 16 Jahren nehmen bitte die Eltern den ersten Kontakt auf. Mehr dazu in der{" "}
+              <a href="/datenschutz" className="underline hover:text-foreground">
+                Datenschutzerklärung
+              </a>
+              .
+            </p>
           </form>
         </motion.div>
       </div>

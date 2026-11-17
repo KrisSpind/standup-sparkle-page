@@ -6,8 +6,9 @@ const FooterSection = () => {
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <Logo />
         <div className="flex gap-6 text-sm font-body text-muted-foreground">
-          <a href="#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
-          <a href="#impressum" className="hover:text-foreground transition-colors">Impressum</a>
+          <a href="/#kontakt" className="hover:text-foreground transition-colors">Kontakt</a>
+          <a href="/impressum" className="hover:text-foreground transition-colors">Impressum</a>
+          <a href="/datenschutz" className="hover:text-foreground transition-colors">Datenschutz</a>
         </div>
         <p className="text-muted-foreground text-sm font-body">
           © 2025 Regina Huber · StandUp Coaching
