@@ -5,7 +5,13 @@ const QuoteSection = () => {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={abstractImage} alt="" className="w-full h-full object-cover opacity-20" />
+        <img
+          src={abstractImage}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-cover opacity-20"
+        />
       </div>
       <div className="relative container mx-auto px-6">
         <motion.blockquote
